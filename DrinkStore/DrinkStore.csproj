@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F51ECECA-CAD6-4B88-B7DD-24811ACF926E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrinkStore</RootNamespace>
+    <AssemblyName>DrinkStore</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\Import\ImportBUS.cs" />
+    <Compile Include="BUS\Import\ImportDetailBUS.cs" />
+    <Compile Include="BUS\Import\SupplierBUS.cs" />
+    <Compile Include="BUS\Order\OrderBUS.cs" />
+    <Compile Include="BUS\Order\OrderDetailBUS.cs" />
+    <Compile Include="BUS\Product\UnitBUS.cs" />
+    <Compile Include="BUS\Product\BrandBUS.cs" />
+    <Compile Include="BUS\Product\CategoryBUS.cs" />
+    <Compile Include="BUS\Product\ProductBUS.cs" />
+    <Compile Include="BUS\Staff\StaffBUS.cs" />
+    <Compile Include="DAO\Import\ImportDAO.cs" />
+    <Compile Include="DAO\Import\ImportDetailDAO.cs" />
+    <Compile Include="DAO\Import\SupllierDAO.cs" />
+    <Compile Include="DAO\Order\OrderDAO.cs" />
+    <Compile Include="DAO\Order\OrderDetailDAO.cs" />
+    <Compile Include="DAO\Product\UnitDAO.cs" />
+    <Compile Include="DAO\Product\BrandDAO.cs" />
+    <Compile Include="DAO\Product\CategoryDAO.cs" />
+    <Compile Include="DAO\Product\ProductDAO.cs" />
+    <Compile Include="DAO\Staff\StaffDAO.cs" />
+    <Compile Include="Entities\Brand.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\DSModel.cs" />
+    <Compile Include="Entities\Gender.cs" />
+    <Compile Include="Entities\Import.cs" />
+    <Compile Include="Entities\ImportDetail.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
+    <Compile Include="Entities\Position.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Staff.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Unit.cs" />
+    <Compile Include="GUI component\CloseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\CloseButton.Designer.cs">
+      <DependentUpon>CloseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\ExpandButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\ExpandButton.Designer.cs">
+      <DependentUpon>ExpandButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\LineSeparator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\LineSeparator.Designer.cs">
+      <DependentUpon>LineSeparator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\MinimizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\MinimizeButton.Designer.cs">
+      <DependentUpon>MinimizeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\MovePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\MovePanel.Designer.cs">
+      <DependentUpon>MovePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\PlusButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\PlusButton.Designer.cs">
+      <DependentUpon>PlusButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI component\SearchButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI component\SearchButton.Designer.cs">
+      <DependentUpon>SearchButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmStatistic.Designer.cs">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Import\frmImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Import\frmImport.Designer.cs">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Import\frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Import\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Order\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Order\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Product\frmSearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Product\frmSearchProduct.Designer.cs">
+      <DependentUpon>frmSearchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Product\frmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Product\frmUnit.Designer.cs">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Product\frmBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Product\frmBrand.Designer.cs">
+      <DependentUpon>frmBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Product\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Product\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Product\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Product\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI component\CloseButton.resx">
+      <DependentUpon>CloseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI component\ExpandButton.resx">
+      <DependentUpon>ExpandButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI component\MinimizeButton.resx">
+      <DependentUpon>MinimizeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI component\MovePanel.resx">
+      <DependentUpon>MovePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI component\PlusButton.resx">
+      <DependentUpon>PlusButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI component\SearchButton.resx">
+      <DependentUpon>SearchButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmStatistic.resx">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Import\frmImport.resx">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Import\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Order\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Product\frmSearchProduct.resx">
+      <DependentUpon>frmSearchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Product\frmUnit.resx">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Product\frmBrand.resx">
+      <DependentUpon>frmBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Product\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Product\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\DrinkStore.exe.config" />
+    <None Include="bin\Debug\DrinkStore.vshost.exe.config" />
+    <None Include="bin\Debug\DrinkStore.vshost.exe.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Brand.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Category.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Import.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.ImportDetail.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Order.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.OrderDetail.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Product.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Supplier.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Unit.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DrinkStore.vshost.exe" />
+    <Content Include="Database\DrinkStore.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\DrinkStore_log.ldf">
+      <DependentUpon>DrinkStore.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\plus_hover.png" />
+    <None Include="Resources\plus_base.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus2.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\lookup_hover.png" />
+    <None Include="Resources\lookup_base.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\expand2.png" />
+    <None Include="Resources\expand.png" />
+    <None Include="Resources\error2.png" />
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
