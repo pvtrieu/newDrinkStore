@@ -10,11 +10,15 @@ namespace DrinkStore.BUS
 {
     class ProductBUS
     {
-        public static bool insert(Product product)
+        public static Product getByID(int productID)
+        {
+            return ProductDAO.getByID(productID);
+        }
+        public static bool add(Product product)
         {
             try
             {
-                ProductDAO.insert(product);
+                ProductDAO.add(product);
                 return true;
             }
             catch

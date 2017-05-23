@@ -14,7 +14,7 @@ namespace DrinkStore.Presentation
 {
     public partial class frmMain : Form
     {
-        static Staff _staff;
+        public static Staff _Pstaff;
         public frmMain()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace DrinkStore.Presentation
         public frmMain(Staff staff)
         {
             InitializeComponent();
-            _staff = staff;
+            _Pstaff = staff;
         }
 
         // Load another form to body panel
@@ -40,9 +40,43 @@ namespace DrinkStore.Presentation
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmProduct _form = new frmProduct();
-            addForm(_form);
-            SelectBtn(btnProduct);
+            
+            switch (_Pstaff.PositionCode)
+            {
+                case "MA":
+                    btnStaff.Visible = true;
+                    btnStatistic.Visible = true;
+                    
+                    frmStaff _formStaff = new frmStaff();
+                    addForm(_formStaff);
+                    SelectBtn(btnStaff);
+                    break;
+                case "SM":
+                    btnProduct.Visible = true;
+                    btnImport.Visible = true;
+                    
+                    frmProduct _formProduct = new frmProduct();
+                    addForm(_formProduct);
+                    SelectBtn(btnProduct);
+                    break;
+                case "CA":
+                    btnOrder.Visible = true;
+                 
+                    frmOrder _formOrder = new frmOrder();
+                    addForm(_formOrder);
+                    SelectBtn(btnOrder);
+                    break;
+                case "AD":                    
+                    btnStaff.Visible = true;
+                    btnStatistic.Visible = true;
+                    btnProduct.Visible = true;
+                    btnImport.Visible = true;
+                    btnOrder.Visible = true;
+                    break;
+            }
+
+            lblWelcome.Text += _Pstaff.Username;
+            
         }
 
         // Form border movable
@@ -115,6 +149,24 @@ namespace DrinkStore.Presentation
             addForm(_form);
         }
 
-       
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            SelectBtn(btnStaff);
+            frmStaff _form = new frmStaff();
+            addForm(_form);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+           
+            frmLogin _frmLogin = new frmLogin();
+            this.Hide();
+            _frmLogin.ShowDialog();
+            this.Close();
+            
+
+        }
+
+        
     }
 }

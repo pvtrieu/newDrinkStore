@@ -83,6 +83,8 @@
     <Compile Include="BUS\Product\BrandBUS.cs" />
     <Compile Include="BUS\Product\CategoryBUS.cs" />
     <Compile Include="BUS\Product\ProductBUS.cs" />
+    <Compile Include="BUS\Staff\GenderBUS.cs" />
+    <Compile Include="BUS\Staff\PositionBUS.cs" />
     <Compile Include="BUS\Staff\StaffBUS.cs" />
     <Compile Include="DAO\Import\ImportDAO.cs" />
     <Compile Include="DAO\Import\ImportDetailDAO.cs" />
@@ -93,6 +95,8 @@
     <Compile Include="DAO\Product\BrandDAO.cs" />
     <Compile Include="DAO\Product\CategoryDAO.cs" />
     <Compile Include="DAO\Product\ProductDAO.cs" />
+    <Compile Include="DAO\Staff\GenderDAO.cs" />
+    <Compile Include="DAO\Staff\PositionDAO.cs" />
     <Compile Include="DAO\Staff\StaffDAO.cs" />
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -173,6 +177,12 @@
     <Compile Include="Presentation\Import\frmImport.Designer.cs">
       <DependentUpon>frmImport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Import\frmSearchImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Import\frmSearchImport.Designer.cs">
+      <DependentUpon>frmSearchImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Import\frmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +194,12 @@
     </Compile>
     <Compile Include="Presentation\Order\frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Order\frmSearchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Order\frmSearchOrder.Designer.cs">
+      <DependentUpon>frmSearchOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Product\frmSearchProduct.cs">
       <SubType>Form</SubType>
@@ -214,6 +230,18 @@
     </Compile>
     <Compile Include="Presentation\Product\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Staff\frmSearchStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Staff\frmSearchStaff.Designer.cs">
+      <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Staff\frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Staff\frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -247,11 +275,17 @@
     <EmbeddedResource Include="Presentation\Import\frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Import\frmSearchImport.resx">
+      <DependentUpon>frmSearchImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Import\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Order\frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Order\frmSearchOrder.resx">
+      <DependentUpon>frmSearchOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Product\frmSearchProduct.resx">
       <DependentUpon>frmSearchProduct.cs</DependentUpon>
@@ -267,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Product\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Staff\frmSearchStaff.resx">
+      <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Staff\frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -284,11 +324,14 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Brand.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Category.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Gender.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Import.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.ImportDetail.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Order.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.OrderDetail.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Position.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Product.datasource" />
+    <None Include="Properties\DataSources\DrinkStore.Entities.Staff.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Supplier.datasource" />
     <None Include="Properties\DataSources\DrinkStore.Entities.Unit.datasource" />
     <None Include="Properties\Settings.settings">

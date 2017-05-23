@@ -9,11 +9,14 @@ namespace DrinkStore.DAO
 {
     class OrderDAO
     {
-        public static List<Order> getAll()
+        public static List<Order> getAll(Staff staff)
         {
             using (DSModel model = new DSModel())
             {
-                return model.Orders.ToList();
+                if (staff.PositionCode == "AD")
+                    return model.Orders.ToList();
+                else
+                    return model.Orders.Where(x => x.StaffID == staff.StaffID).ToList();
             }
         }
 
@@ -55,6 +58,20 @@ namespace DrinkStore.DAO
                                                                 Sum(x => x.UnitCost * x.Amount);
                 model.Entry(sumOrder).CurrentValues.SetValues(order);
                 model.SaveChanges();
+            }
+        }
+
+        public static List<Order> search(DateTime? after, DateTime? before)
+        {
+            using (DSModel model = new DSModel())
+            {
+                var result = model.Orders.ToList();
+                
+                if (after != null)
+                    result = result.Where(x => x.OrderDate >= after).ToList();
+                if (before != null)
+                    result = result.Where(x => x.OrderDate <= before).ToList();
+                return result;
             }
         }
 

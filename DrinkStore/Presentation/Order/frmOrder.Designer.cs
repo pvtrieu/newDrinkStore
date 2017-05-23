@@ -66,6 +66,7 @@
             this.lineSeparator2 = new DrinkStore.Presentation.LineSeparator();
             this.lineSeparator1 = new DrinkStore.Presentation.LineSeparator();
             this.btnUpdateOrder = new System.Windows.Forms.Button();
+            this.btnSearchOrder = new DrinkStore.GUI_component.SearchButton();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.pnlOrderData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
@@ -260,6 +261,7 @@
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(269, 245);
             this.dgvDetail.TabIndex = 0;
+            this.dgvDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellClick);
             this.dgvDetail.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDetail_DataError);
             // 
             // productIDDataGridViewTextBoxColumn
@@ -436,6 +438,7 @@
             this.cboProduct.Size = new System.Drawing.Size(136, 21);
             this.cboProduct.TabIndex = 108;
             this.cboProduct.ValueMember = "ProductID";
+            this.cboProduct.SelectionChangeCommitted += new System.EventHandler(this.cboProduct_SelectionChangeCommitted);
             // 
             // btnSearchProduct
             // 
@@ -489,11 +492,22 @@
             this.btnUpdateOrder.UseVisualStyleBackColor = false;
             this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
+            // btnSearchOrder
+            // 
+            this.btnSearchOrder.Location = new System.Drawing.Point(558, 9);
+            this.btnSearchOrder.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearchOrder.Name = "btnSearchOrder";
+            this.btnSearchOrder.Size = new System.Drawing.Size(20, 20);
+            this.btnSearchOrder.TabIndex = 112;
+            this.btnSearchOrder.ButtonClick += new System.EventHandler(this.btnSearchOrder_Click);
+            this.btnSearchOrder.Click += new System.EventHandler(this.btnSearchOrder_Click);
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.btnSearchOrder);
             this.Controls.Add(this.btnUpdateOrder);
             this.Controls.Add(this.btnSearchProduct);
             this.Controls.Add(this.lblProduct);
@@ -548,14 +562,10 @@
         private LineSeparator lineSeparator2;
         private System.Windows.Forms.Panel pnlOrderData;
         private System.Windows.Forms.DataGridView dgvOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalSaleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalProfitDataGridViewTextBoxColumn;
+  
         private System.Windows.Forms.BindingSource orderTBBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
+        
         private System.Windows.Forms.BindingSource detailBindingSource;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.BindingSource detailTBBindingSource;
@@ -580,5 +590,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnUpdateOrder;
+        private GUI_component.SearchButton btnSearchOrder;
     }
 }

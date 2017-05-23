@@ -10,9 +10,9 @@ namespace DrinkStore.BUS
 {
     class OrderBUS
     {
-        public static List<Order> getAll()
+        public static List<Order> getAll(Staff staff)
         {
-            return OrderDAO.getAll();
+            return OrderDAO.getAll(staff);
         }
 
         public static void add(Order order)
@@ -33,6 +33,11 @@ namespace DrinkStore.BUS
         public static void sumOrder(Order order)
         {
             OrderDAO.sumCost(order);
+        }
+
+        public static List<Order> search(DateTime? after, DateTime? before)
+        {
+            return OrderDAO.search(after, before);
         }
     }
 }

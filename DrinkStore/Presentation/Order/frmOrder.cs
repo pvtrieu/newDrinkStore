@@ -27,7 +27,7 @@ namespace DrinkStore.Presentation
         private void initLoad()
         {
             orderBindingSource.DataSource = new Order();
-            orderTBBindingSource.DataSource = OrderBUS.getAll();
+            orderTBBindingSource.DataSource = OrderBUS.getAll(frmMain._Pstaff);
             productBindingSource.DataSource = ProductBUS.getAll();
             detailBindingSource.DataSource = new OrderDetail();
             detailTBBindingSource.DataSource = new OrderDetail();
@@ -64,7 +64,7 @@ namespace DrinkStore.Presentation
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             OrderBUS.add(orderBindingSource.Current as Order);
-            orderTBBindingSource.DataSource = OrderBUS.getAll();
+            orderTBBindingSource.DataSource = OrderBUS.getAll(frmMain._Pstaff);
 
             //Select latest import
             int nRowIndex = dgvOrder.Rows.Count - 2;
@@ -139,6 +139,23 @@ namespace DrinkStore.Presentation
             frmSearchProduct _frmSearch = new frmSearchProduct();
             _frmSearch.ShowDialog();
             productBindingSource.DataSource = _frmSearch.getProduct();
+        }
+
+        private void cboProduct_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            (detailBindingSource.Current as OrderDetail).UnitCost = ProductBUS.getByID((int)cboProduct.SelectedValue).UnitPrice;
+        }
+
+        private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            detailBindingSource.DataSource = detailTBBindingSource.Current;
+        }
+
+        private void btnSearchOrder_Click(object sender, EventArgs e)
+        {
+            frmSearchOrder _frmSearch = new frmSearchOrder();
+            _frmSearch.ShowDialog();
+            orderBindingSource.DataSource = _frmSearch.getOrder();
         }
     }
 }

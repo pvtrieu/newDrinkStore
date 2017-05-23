@@ -33,6 +33,7 @@
             this.pnlDataImport = new System.Windows.Forms.Panel();
             this.dgvImport = new System.Windows.Forms.DataGridView();
             this.importIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.importDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +75,7 @@
             this.lineSeparator1 = new DrinkStore.Presentation.LineSeparator();
             this.txtImportID = new System.Windows.Forms.TextBox();
             this.lblImportID = new System.Windows.Forms.Label();
+            this.btnSearchImport = new DrinkStore.GUI_component.SearchButton();
             this.pnlDataImport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
@@ -120,6 +122,7 @@
             this.dgvImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.importIDDataGridViewTextBoxColumn,
+            this.StaffID,
             this.supplierIDDataGridViewTextBoxColumn,
             this.importDateDataGridViewTextBoxColumn,
             this.totalCostDataGridViewTextBoxColumn});
@@ -141,6 +144,13 @@
             this.importIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.importIDDataGridViewTextBoxColumn.Name = "importIDDataGridViewTextBoxColumn";
             this.importIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // StaffID
+            // 
+            this.StaffID.DataPropertyName = "StaffID";
+            this.StaffID.HeaderText = "StaffID";
+            this.StaffID.Name = "StaffID";
+            this.StaffID.ReadOnly = true;
             // 
             // supplierIDDataGridViewTextBoxColumn
             // 
@@ -560,12 +570,23 @@
             this.lblImportID.TabIndex = 82;
             this.lblImportID.Text = "ImportID:";
             // 
+            // btnSearchImport
+            // 
+            this.btnSearchImport.Location = new System.Drawing.Point(561, 13);
+            this.btnSearchImport.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearchImport.Name = "btnSearchImport";
+            this.btnSearchImport.Size = new System.Drawing.Size(20, 20);
+            this.btnSearchImport.TabIndex = 84;
+            this.btnSearchImport.ButtonClick += new System.EventHandler(this.btnSearchImport_Click);
+            this.btnSearchImport.Click += new System.EventHandler(this.btnSearchImport_Click);
+            // 
             // frmImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.btnSearchImport);
             this.Controls.Add(this.txtImportID);
             this.Controls.Add(this.lblImportID);
             this.Controls.Add(this.btnSearchProduct);
@@ -635,11 +656,7 @@
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private GUI_component.PlusButton btnAddSupplier;
         private System.Windows.Forms.BindingSource importTBBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn currentUnitQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn currentBoxQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wholeCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retailCostDataGridViewTextBoxColumn;
+
         private System.Windows.Forms.DateTimePicker dateExpired;
         private System.Windows.Forms.Label lblExpired;
         private System.Windows.Forms.Label lblProduct;
@@ -658,13 +675,15 @@
         private GUI_component.SearchButton btnSearchProduct;
         private System.Windows.Forms.TextBox txtImportID;
         private System.Windows.Forms.Label lblImportID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn supplierIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiredDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StaffID;
+        private System.Windows.Forms.DataGridViewComboBoxColumn supplierIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private GUI_component.SearchButton btnSearchImport;
     }
 }

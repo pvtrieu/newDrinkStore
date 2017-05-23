@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DrinkStore.DAO;
+﻿using DrinkStore.DAO;
 using DrinkStore.Entities;
+using System.Collections.Generic;
 
 namespace DrinkStore.BUS
 {
@@ -22,6 +18,52 @@ namespace DrinkStore.BUS
                 return true;
             else
                 return false;
+        }
+
+        public static Staff getByID(int staffID)
+        {
+            return StaffDAO.getByID(staffID);
+        }
+
+        public static List<Staff> getAll()
+        {
+            return StaffDAO.getAll();
+        }
+        public static bool add(Staff staff)
+        {
+            try
+            {
+                StaffDAO.add(staff);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+           
+        }
+
+        public static bool update(Staff staff)
+        {
+            try
+            {
+                StaffDAO.update(staff);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static void delete(Staff staff)
+        {
+            StaffDAO.delete(staff);
+        }
+
+        public static List<Staff> search(string name, string position)
+        {
+            return StaffDAO.search(name, position);
         }
     }
 }

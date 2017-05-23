@@ -30,7 +30,7 @@ namespace DrinkStore.Presentation
         // Load database to view, reset form
         private void onLoad()
         {
-            importTBBindingSource.DataSource = ImportBUS.getAll();       
+            importTBBindingSource.DataSource = ImportBUS.getAll(frmMain._Pstaff);       
             importBindingSource.DataSource = new Import();
 
             productBindingSource.DataSource = ProductBUS.getAll();
@@ -59,8 +59,10 @@ namespace DrinkStore.Presentation
         //Add new import
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            _import = (importBindingSource.Current as Import);
+            _import.StaffID = frmMain._Pstaff.StaffID;
             ImportBUS.add(importBindingSource.Current as Import);
-            importTBBindingSource.DataSource = ImportBUS.getAll();
+            importTBBindingSource.DataSource = ImportBUS.getAll(frmMain._Pstaff);
 
             //Select latest import
             int nRowIndex = dgvImport.Rows.Count - 2;
@@ -159,6 +161,13 @@ namespace DrinkStore.Presentation
             frmSearchProduct _frmSearch = new frmSearchProduct();
             _frmSearch.ShowDialog();
             productBindingSource.DataSource = _frmSearch.getProduct();
+        }
+
+        private void btnSearchImport_Click(object sender, EventArgs e)
+        {
+            frmSearchImport _frmSearch = new frmSearchImport();
+            _frmSearch.ShowDialog();
+            productBindingSource.DataSource = _frmSearch.getImport();
         }
     }
 }

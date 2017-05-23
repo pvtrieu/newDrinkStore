@@ -49,7 +49,7 @@ namespace DrinkStore.Presentation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ProductBUS.insert(productBindingSource.Current as Product))
+            if (ProductBUS.add(productBindingSource.Current as Product))
                 onLoad();
             else
                 MessageBox.Show("Invalid input");

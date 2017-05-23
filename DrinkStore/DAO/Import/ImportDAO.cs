@@ -50,11 +50,30 @@ namespace DrinkStore.DAO
             }
         }
 
-        public static List<Import> getAll()
+        public static List<Import> getAll(Staff staff)
         {
             using (DSModel model = new DSModel())
             {
-                return model.Imports.ToList();
+                if (staff.PositionCode == "AD")
+                    return model.Imports.ToList();
+                else
+                    return model.Imports.Where(x => x.StaffID == staff.StaffID).ToList();
+            }
+        }
+
+        public static List<Import> search(int? supplierID, DateTime? after, DateTime? before)
+        {
+            using (DSModel model = new DSModel())
+            {
+                var result = model.Imports.ToList();
+                if (supplierID != null)
+                    result = result.Where(x => x.SupplierID == supplierID).ToList();
+                if (after != null)
+                    result = result.Where(x => x.ImportDate >= after).ToList();
+                if (after != null)
+                    result = result.Where(x => x.ImportDate <= before).ToList();
+
+                return result;
             }
         }
 

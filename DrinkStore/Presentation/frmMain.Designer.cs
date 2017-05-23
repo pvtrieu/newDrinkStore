@@ -30,22 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.minimizeButton1 = new DrinkStore.Presentation.MinimizeButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
-            this.closeButton1 = new DrinkStore.Presentation.CloseButton();
-            this.expandButton1 = new DrinkStore.Presentation.ExpandButton();
             this.pnlSide = new System.Windows.Forms.Panel();
+            this.pnlSideBottom = new System.Windows.Forms.Panel();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.minimizeButton1 = new DrinkStore.Presentation.MinimizeButton();
+            this.closeButton1 = new DrinkStore.Presentation.CloseButton();
+            this.expandButton1 = new DrinkStore.Presentation.ExpandButton();
             this.pnlTop.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlSide.SuspendLayout();
+            this.pnlSideBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -64,14 +69,6 @@
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseMove);
             this.pnlTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseUp);
             // 
-            // minimizeButton1
-            // 
-            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton1.Location = new System.Drawing.Point(706, 12);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(24, 24);
-            this.minimizeButton1.TabIndex = 4;
-            // 
             // pnlLogo
             // 
             this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(45)))));
@@ -82,7 +79,6 @@
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(200, 50);
             this.pnlLogo.TabIndex = 0;
-            
             // 
             // pictureBox1
             // 
@@ -105,6 +101,184 @@
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "Drink Store";
             // 
+            // pnlSide
+            // 
+            this.pnlSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.pnlSide.Controls.Add(this.pnlSideBottom);
+            this.pnlSide.Controls.Add(this.btnStaff);
+            this.pnlSide.Controls.Add(this.btnStatistic);
+            this.pnlSide.Controls.Add(this.btnImport);
+            this.pnlSide.Controls.Add(this.btnOrder);
+            this.pnlSide.Controls.Add(this.btnProduct);
+            this.pnlSide.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSide.Location = new System.Drawing.Point(0, 50);
+            this.pnlSide.Name = "pnlSide";
+            this.pnlSide.Size = new System.Drawing.Size(200, 600);
+            this.pnlSide.TabIndex = 0;
+            // 
+            // pnlSideBottom
+            // 
+            this.pnlSideBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.pnlSideBottom.Controls.Add(this.lblWelcome);
+            this.pnlSideBottom.Controls.Add(this.btnLogout);
+            this.pnlSideBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlSideBottom.Location = new System.Drawing.Point(0, 175);
+            this.pnlSideBottom.Name = "pnlSideBottom";
+            this.pnlSideBottom.Size = new System.Drawing.Size(200, 425);
+            this.pnlSideBottom.TabIndex = 0;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblWelcome.Font = new System.Drawing.Font("Lucida Fax", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.lblWelcome.Location = new System.Drawing.Point(0, 349);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(200, 50);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Hi, ";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnLogout.Location = new System.Drawing.Point(0, 399);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(200, 26);
+            this.btnLogout.TabIndex = 24;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStaff.FlatAppearance.BorderSize = 0;
+            this.btnStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnStaff.Location = new System.Drawing.Point(0, 140);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnStaff.Size = new System.Drawing.Size(200, 35);
+            this.btnStaff.TabIndex = 5;
+            this.btnStaff.Text = "Staff";
+            this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.UseVisualStyleBackColor = false;
+            this.btnStaff.Visible = false;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistic.FlatAppearance.BorderSize = 0;
+            this.btnStatistic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnStatistic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnStatistic.Location = new System.Drawing.Point(0, 105);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnStatistic.Size = new System.Drawing.Size(200, 35);
+            this.btnStatistic.TabIndex = 4;
+            this.btnStatistic.Text = "Statistic";
+            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.UseVisualStyleBackColor = false;
+            this.btnStatistic.Visible = false;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnImport.Location = new System.Drawing.Point(0, 70);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnImport.Size = new System.Drawing.Size(200, 35);
+            this.btnImport.TabIndex = 3;
+            this.btnImport.Text = "Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrder.FlatAppearance.BorderSize = 0;
+            this.btnOrder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnOrder.Location = new System.Drawing.Point(0, 35);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnOrder.Size = new System.Drawing.Size(200, 35);
+            this.btnOrder.TabIndex = 2;
+            this.btnOrder.Text = "Order";
+            this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Visible = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.btnProduct.Location = new System.Drawing.Point(0, 0);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.btnProduct.Size = new System.Drawing.Size(200, 35);
+            this.btnProduct.TabIndex = 1;
+            this.btnProduct.Text = "Product";
+            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Visible = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Location = new System.Drawing.Point(200, 50);
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.Size = new System.Drawing.Size(600, 600);
+            this.pnlBody.TabIndex = 2;
+           
+            // 
+            // minimizeButton1
+            // 
+            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton1.Location = new System.Drawing.Point(706, 12);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(24, 24);
+            this.minimizeButton1.TabIndex = 4;
+            // 
             // closeButton1
             // 
             this.closeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,108 +295,6 @@
             this.expandButton1.Name = "expandButton1";
             this.expandButton1.Size = new System.Drawing.Size(24, 24);
             this.expandButton1.TabIndex = 0;
-            // 
-            // pnlSide
-            // 
-            this.pnlSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.pnlSide.Controls.Add(this.btnStatistic);
-            this.pnlSide.Controls.Add(this.btnImport);
-            this.pnlSide.Controls.Add(this.btnOrder);
-            this.pnlSide.Controls.Add(this.btnProduct);
-            this.pnlSide.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSide.Location = new System.Drawing.Point(0, 50);
-            this.pnlSide.Name = "pnlSide";
-            this.pnlSide.Size = new System.Drawing.Size(200, 600);
-            this.pnlSide.TabIndex = 0;
-            // 
-            // btnStatistic
-            // 
-            this.btnStatistic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistic.FlatAppearance.BorderSize = 0;
-            this.btnStatistic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnStatistic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.btnStatistic.Location = new System.Drawing.Point(0, 105);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnStatistic.Size = new System.Drawing.Size(200, 35);
-            this.btnStatistic.TabIndex = 4;
-            this.btnStatistic.Text = "Statistic";
-            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.UseVisualStyleBackColor = false;
-            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.btnImport.Location = new System.Drawing.Point(0, 70);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnImport.Size = new System.Drawing.Size(200, 35);
-            this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Import";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.UseVisualStyleBackColor = false;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOrder.FlatAppearance.BorderSize = 0;
-            this.btnOrder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.btnOrder.Location = new System.Drawing.Point(0, 35);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnOrder.Size = new System.Drawing.Size(200, 35);
-            this.btnOrder.TabIndex = 2;
-            this.btnOrder.Text = "Order";
-            this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.UseVisualStyleBackColor = false;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.btnProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.btnProduct.Location = new System.Drawing.Point(0, 0);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(200, 35);
-            this.btnProduct.TabIndex = 1;
-            this.btnProduct.Text = "Product";
-            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.UseVisualStyleBackColor = false;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            // 
-            // pnlBody
-            // 
-            this.pnlBody.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBody.Location = new System.Drawing.Point(200, 50);
-            this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(600, 600);
-            this.pnlBody.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -244,6 +316,7 @@
             this.pnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlSide.ResumeLayout(false);
+            this.pnlSideBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,5 +336,9 @@
         private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnlSideBottom;
     }
 }

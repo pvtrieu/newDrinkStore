@@ -9,7 +9,14 @@ namespace DrinkStore.DAO
 {
     class ProductDAO
     {
-        public static void insert(Product product)
+        public static Product getByID(int productID)
+        {
+            using (DSModel model = new DSModel())
+            {
+                return model.Products.Find(productID);
+            }
+        }
+        public static void add(Product product)
         {
             using (DSModel model = new DSModel())
             {

@@ -59,7 +59,6 @@
             this.lineSeparator1 = new DrinkStore.Presentation.LineSeparator();
             this.lblBrand = new System.Windows.Forms.Label();
             this.cboCate = new System.Windows.Forms.ComboBox();
-            this.plusButton2 = new DrinkStore.GUI_component.PlusButton();
             this.btnAddCate = new DrinkStore.GUI_component.PlusButton();
             this.btnAddBrand = new DrinkStore.GUI_component.PlusButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -398,14 +397,6 @@
             this.cboCate.TabIndex = 28;
             this.cboCate.ValueMember = "CategoryID";
             // 
-            // plusButton2
-            // 
-            this.plusButton2.Location = new System.Drawing.Point(-15, -15);
-            this.plusButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.plusButton2.Name = "plusButton2";
-            this.plusButton2.Size = new System.Drawing.Size(20, 20);
-            this.plusButton2.TabIndex = 30;
-            // 
             // btnAddCate
             // 
             this.btnAddCate.Location = new System.Drawing.Point(557, 99);
@@ -470,7 +461,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAddBrand);
             this.Controls.Add(this.btnAddCate);
-            this.Controls.Add(this.plusButton2);
             this.Controls.Add(this.cboCate);
             this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.btnDelete);
@@ -532,11 +522,6 @@
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private System.Windows.Forms.BindingSource brandBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxQuantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wholeSaleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retailSaleDataGridViewTextBoxColumn;
-        private GUI_component.PlusButton plusButton2;
         private GUI_component.PlusButton btnAddCate;
         private GUI_component.PlusButton btnAddBrand;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -30,11 +30,17 @@ namespace DrinkStore.BUS
             ImportDAO.sumCost(import);
         }
 
-        public static List<Import> getAll()
+        public static List<Import> getAll(Staff staff)
         {
-            return ImportDAO.getAll();
+            return ImportDAO.getAll(staff);
         }
 
- 
+        public static List<Import> search(int? supplierID, DateTime? after, DateTime? before)
+        {
+            return ImportDAO.search(supplierID, after, before);
+        }
+
+
+
     }
 }
