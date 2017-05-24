@@ -75,7 +75,7 @@ namespace DrinkStore.Presentation
                     break;
             }
 
-            lblWelcome.Text += _Pstaff.Username;
+            
             
         }
 

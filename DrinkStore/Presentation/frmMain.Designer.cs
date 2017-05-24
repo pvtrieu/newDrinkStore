@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.minimizeButton1 = new DrinkStore.Presentation.MinimizeButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.closeButton1 = new DrinkStore.Presentation.CloseButton();
+            this.expandButton1 = new DrinkStore.Presentation.ExpandButton();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.pnlSideBottom = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
@@ -43,9 +45,6 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.pnlBody = new System.Windows.Forms.Panel();
-            this.minimizeButton1 = new DrinkStore.Presentation.MinimizeButton();
-            this.closeButton1 = new DrinkStore.Presentation.CloseButton();
-            this.expandButton1 = new DrinkStore.Presentation.ExpandButton();
             this.pnlTop.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +67,14 @@
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseMove);
             this.pnlTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseUp);
+            // 
+            // minimizeButton1
+            // 
+            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton1.Location = new System.Drawing.Point(706, 12);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(24, 24);
+            this.minimizeButton1.TabIndex = 4;
             // 
             // pnlLogo
             // 
@@ -101,6 +108,23 @@
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "Drink Store";
             // 
+            // closeButton1
+            // 
+            this.closeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton1.AutoSize = true;
+            this.closeButton1.Location = new System.Drawing.Point(766, 12);
+            this.closeButton1.Name = "closeButton1";
+            this.closeButton1.Size = new System.Drawing.Size(27, 27);
+            this.closeButton1.TabIndex = 0;
+            // 
+            // expandButton1
+            // 
+            this.expandButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.expandButton1.Location = new System.Drawing.Point(736, 12);
+            this.expandButton1.Name = "expandButton1";
+            this.expandButton1.Size = new System.Drawing.Size(24, 24);
+            this.expandButton1.TabIndex = 0;
+            // 
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
@@ -119,40 +143,25 @@
             // pnlSideBottom
             // 
             this.pnlSideBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.pnlSideBottom.Controls.Add(this.lblWelcome);
             this.pnlSideBottom.Controls.Add(this.btnLogout);
             this.pnlSideBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSideBottom.Location = new System.Drawing.Point(0, 175);
+            this.pnlSideBottom.Location = new System.Drawing.Point(0, 550);
             this.pnlSideBottom.Name = "pnlSideBottom";
-            this.pnlSideBottom.Size = new System.Drawing.Size(200, 425);
+            this.pnlSideBottom.Size = new System.Drawing.Size(200, 50);
             this.pnlSideBottom.TabIndex = 0;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblWelcome.Font = new System.Drawing.Font("Lucida Fax", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.lblWelcome.Location = new System.Drawing.Point(0, 349);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(200, 50);
-            this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Hi, ";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 399);
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLogout.Location = new System.Drawing.Point(0, 0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(200, 26);
+            this.btnLogout.Size = new System.Drawing.Size(200, 50);
             this.btnLogout.TabIndex = 24;
             this.btnLogout.Text = "Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -269,32 +278,6 @@
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(600, 600);
             this.pnlBody.TabIndex = 2;
-           
-            // 
-            // minimizeButton1
-            // 
-            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton1.Location = new System.Drawing.Point(706, 12);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(24, 24);
-            this.minimizeButton1.TabIndex = 4;
-            // 
-            // closeButton1
-            // 
-            this.closeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton1.AutoSize = true;
-            this.closeButton1.Location = new System.Drawing.Point(766, 12);
-            this.closeButton1.Name = "closeButton1";
-            this.closeButton1.Size = new System.Drawing.Size(27, 27);
-            this.closeButton1.TabIndex = 0;
-            // 
-            // expandButton1
-            // 
-            this.expandButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.expandButton1.Location = new System.Drawing.Point(736, 12);
-            this.expandButton1.Name = "expandButton1";
-            this.expandButton1.Size = new System.Drawing.Size(24, 24);
-            this.expandButton1.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -337,7 +320,6 @@
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnStaff;
-        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel pnlSideBottom;
     }
