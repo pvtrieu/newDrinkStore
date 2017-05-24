@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -165,10 +168,10 @@
     <Compile Include="Presentation\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\frmStatistic.cs">
+    <Compile Include="Presentation\Report\frmStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\frmStatistic.Designer.cs">
+    <Compile Include="Presentation\Report\frmStatistic.Designer.cs">
       <DependentUpon>frmStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Import\frmImport.cs">
@@ -269,7 +272,7 @@
     <EmbeddedResource Include="Presentation\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\frmStatistic.resx">
+    <EmbeddedResource Include="Presentation\Report\frmStatistic.resx">
       <DependentUpon>frmStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Import\frmImport.resx">
@@ -381,7 +384,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

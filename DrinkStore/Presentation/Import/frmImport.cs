@@ -30,6 +30,8 @@ namespace DrinkStore.Presentation
         // Load database to view, reset form
         private void onLoad()
         {
+            offBtn();
+
             importTBBindingSource.DataSource = ImportBUS.getAll(frmMain._Pstaff);       
             importBindingSource.DataSource = new Import();
 
@@ -50,6 +52,7 @@ namespace DrinkStore.Presentation
         //Load import from datagridview to current form    
         private void dgvImport_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            onBtn();
             importBindingSource.DataSource = importTBBindingSource.Current;
             _import = importTBBindingSource.Current as Import;
             detailTBBindingSource.DataSource = ImportDetailBUS.getAll(_import);
@@ -105,6 +108,21 @@ namespace DrinkStore.Presentation
         //*******************************************************************//
         //             Import detail part                                    //
         //*******************************************************************//
+
+        //Toggle Detail button    
+        private void offBtn()
+        {
+            btnAddDetail.Enabled = false;
+            btnUpdateDetail.Enabled = false;
+            btnDeleteDetail.Enabled = false;
+        }
+        private void onBtn()
+        {
+            btnAddDetail.Enabled = true;
+            btnUpdateDetail.Enabled = true;
+            btnDeleteDetail.Enabled = true;
+        }
+
 
         //Reset detail form
         private void reLoad()

@@ -26,6 +26,7 @@ namespace DrinkStore.Presentation
 
         private void initLoad()
         {
+            offBtn();
             orderBindingSource.DataSource = new Order();
             orderTBBindingSource.DataSource = OrderBUS.getAll(frmMain._Pstaff);
             productBindingSource.DataSource = ProductBUS.getAll();
@@ -54,6 +55,7 @@ namespace DrinkStore.Presentation
         //Select order form datagridview
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            onBtn();
             orderBindingSource.DataSource = orderTBBindingSource.Current;
             _order = orderTBBindingSource.Current as Order;
             detailTBBindingSource.DataSource = OrderDetailBUS.getAll(_order);
@@ -96,6 +98,21 @@ namespace DrinkStore.Presentation
             orderBindingSource.DataSource = _order;
         }
 
+
+        //Toggle Detail button    
+        private void offBtn()
+        {
+            btnAddDetail.Enabled = false;
+            btnUpdateDetail.Enabled = false;
+            btnDeleteDetail.Enabled = false;
+        }
+        private void onBtn()
+        {
+            btnAddDetail.Enabled = true;
+            btnUpdateDetail.Enabled = true;
+            btnDeleteDetail.Enabled = true;
+        }
+
         //Add new order detail
         private void btnAddDetail_Click(object sender, EventArgs e)
         {
@@ -112,10 +129,7 @@ namespace DrinkStore.Presentation
             }
             
         }
-
-       
-
-       
+      
 
         private void btnUpdateDetail_Click(object sender, EventArgs e)
         {
