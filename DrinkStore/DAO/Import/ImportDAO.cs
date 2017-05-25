@@ -54,7 +54,7 @@ namespace DrinkStore.DAO
         {
             using (DSModel model = new DSModel())
             {
-                if (staff.PositionCode == "AD")
+                if (staff.PositionCode == "AD" || staff.PositionCode == "MA")
                     return model.Imports.ToList();
                 else
                     return model.Imports.Where(x => x.StaffID == staff.StaffID).ToList();
