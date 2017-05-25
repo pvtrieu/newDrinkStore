@@ -56,9 +56,17 @@ namespace DrinkStore.BUS
             }
         }
 
-        public static void delete(Staff staff)
+        public static bool delete(Staff staff)
         {
-            StaffDAO.delete(staff);
+            try
+            {
+                StaffDAO.delete(staff);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static List<Staff> search(string name, string position)

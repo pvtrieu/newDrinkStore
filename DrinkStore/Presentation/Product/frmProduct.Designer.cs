@@ -64,6 +64,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddUnit = new DrinkStore.GUI_component.PlusButton();
             this.btnSearch = new DrinkStore.GUI_component.SearchButton();
+            this.lblCurrentMax = new System.Windows.Forms.Label();
             this.pnlProductImg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -450,12 +451,22 @@
             this.btnSearch.ButtonClick += new System.EventHandler(this.btnSearch_Click);
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // lblCurrentMax
+            // 
+            this.lblCurrentMax.AutoSize = true;
+            this.lblCurrentMax.ForeColor = System.Drawing.Color.Red;
+            this.lblCurrentMax.Location = new System.Drawing.Point(301, 168);
+            this.lblCurrentMax.Name = "lblCurrentMax";
+            this.lblCurrentMax.Size = new System.Drawing.Size(0, 13);
+            this.lblCurrentMax.TabIndex = 37;
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.lblCurrentMax);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddUnit);
             this.Controls.Add(this.comboBox1);
@@ -534,5 +545,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn categoryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn UnitID;
+        private System.Windows.Forms.Label lblCurrentMax;
     }
 }

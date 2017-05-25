@@ -17,6 +17,24 @@ namespace DrinkStore.DAO
             }
         }
 
+        public static int? inStock(int productID)
+        {
+            using (DSModel model = new DSModel())
+            {
+                return model.ImportDetails.Where(x => x.ProductID == productID)
+                                          .Sum(x => x.Amount);
+            }
+        }
+
+        public static int? outStock(int productID)
+        {
+            using (DSModel model = new DSModel())
+            {
+                return model.OrderDetails.Where(x => x.ProductID == productID)
+                                          .Sum(x => x.Amount);
+            }
+        }
+
         public static void add(OrderDetail orderDetail)
         {
             using (DSModel model = new DSModel())

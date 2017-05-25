@@ -22,19 +22,48 @@ namespace DrinkStore.BUS
             }
         }
 
-        public static void add(ImportDetail detail)
+       
+
+        public static bool add(ImportDetail detail)
         {
-            ImportDetailDAO.add(detail);
+            try
+            {
+                ImportDetailDAO.add(detail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
-        public static void update(ImportDetail detail)
-        {
-            ImportDetailDAO.update(detail);
+        public static bool update(ImportDetail detail)
+        { 
+            try
+            {
+                ImportDetailDAO.update(detail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
-        public static void delete(ImportDetail detail)
+        public static bool delete(ImportDetail detail)
         {
-            ImportDetailDAO.delete(detail);
+            try
+            {
+                ImportDetailDAO.delete(detail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        
         }
     }
 }

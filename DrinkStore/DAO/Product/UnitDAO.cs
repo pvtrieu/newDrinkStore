@@ -24,7 +24,7 @@ namespace DrinkStore.DAO
             }
         }
 
-        public static void insert(Unit unit)
+        public static void add(Unit unit)
         {
             using (DSModel model = new DSModel())
             {

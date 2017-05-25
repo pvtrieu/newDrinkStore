@@ -22,14 +22,32 @@ namespace DrinkStore.BUS
             return CategoryDAO.getById(id);
         }
 
-        public static void insert (Category category)
+        public static bool add (Category category)
         {
-            CategoryDAO.insert(category);
+            try
+            {
+                CategoryDAO.add(category);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
-        public static void update (Category category)
+        public static bool update (Category category)
         {
-            CategoryDAO.update(category);
+            try
+            {
+                CategoryDAO.update(category);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
     }
 }

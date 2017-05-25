@@ -27,7 +27,7 @@ namespace DrinkStore.Presentation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            UnitBUS.insert(unitBindingSource.Current as Unit);
+            UnitBUS.add(unitBindingSource.Current as Unit);
             unitTBBindingSource.DataSource = UnitBUS.getAll();
             unitBindingSource.DataSource = new Unit();
         }

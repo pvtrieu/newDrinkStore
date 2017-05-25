@@ -20,14 +20,30 @@ namespace DrinkStore.BUS
             return UnitDAO.getById(id);
         }
 
-        public static void insert(Unit unit)
+        public static bool add(Unit unit)
         {
-            UnitDAO.insert(unit);
+            try
+            {
+                UnitDAO.add(unit);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }      
         }
 
-        public static void update(Unit unit)
+        public static bool update(Unit unit)
         {
-            UnitDAO.update(unit);
+            try
+            {
+                UnitDAO.update(unit);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace DrinkStore.Presentation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CategoryBUS.insert(categoryBindingSource.Current as Category);
+            CategoryBUS.add(categoryBindingSource.Current as Category);
             categoryTBBindingSource.DataSource = CategoryBUS.getAll();
             categoryBindingSource.DataSource = new Category();
         }

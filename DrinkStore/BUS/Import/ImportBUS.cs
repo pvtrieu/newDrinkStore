@@ -10,19 +10,48 @@ namespace DrinkStore.BUS
 {
     class ImportBUS
     {
-        public static void add(Import import)
+        public static bool add(Import import)
         {
-            ImportDAO.add(import);
+            try
+            {
+                ImportDAO.add(import);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
-        public static void update(Import import)
+        public static bool update(Import import)
         {
-            ImportDAO.update(import);
+            try
+            {
+                ImportDAO.update(import);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
-        public static void delete(Import import)
+     
+
+        public static bool delete(Import import)
         {
-            ImportDAO.delete(import);
+            try
+            {
+                ImportDAO.delete(import);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
         public static void sumImport(Import import)

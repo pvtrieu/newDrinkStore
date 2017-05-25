@@ -27,7 +27,7 @@ namespace DrinkStore.Presentation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            BrandBUS.insert(brandBindingSource.Current as Brand);
+            BrandBUS.add(brandBindingSource.Current as Brand);
             brandTBBindingSource.DataSource = BrandBUS.getAll();
             brandBindingSource.DataSource = new Brand();
         }

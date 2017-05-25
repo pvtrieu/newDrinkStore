@@ -22,14 +22,31 @@ namespace DrinkStore.BUS
             return SupplierDAO.getById(id);
         }
 
-        public static void insert(Supplier supplier)
+        public static bool add(Supplier supplier)
         {
-            SupplierDAO.insert(supplier);
+            try
+            {
+                SupplierDAO.add(supplier);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
-        public static void update(Supplier supplier)
+        public static bool update(Supplier supplier)
         {
-            SupplierDAO.update(supplier);
+            try
+            {
+                SupplierDAO.update(supplier);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

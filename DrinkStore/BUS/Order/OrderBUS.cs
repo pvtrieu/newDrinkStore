@@ -15,19 +15,46 @@ namespace DrinkStore.BUS
             return OrderDAO.getAll(staff);
         }
 
-        public static void add(Order order)
+        public static bool add(Order order)
         {
-            OrderDAO.add(order);
+            try
+            {
+                OrderDAO.add(order);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
-        public static void update(Order order)
+        public static bool update(Order order)
         {
-            OrderDAO.update(order);
+            try
+            {
+                OrderDAO.update(order);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
-        public static void delete(Order order)
+        public static bool delete(Order order)
         {
-            OrderDAO.delete(order);
+            try
+            {
+                OrderDAO.delete(order);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         public static void sumOrder(Order order)

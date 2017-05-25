@@ -31,7 +31,7 @@ namespace DrinkStore.Presentation
         private void onLoad()
         {
             offBtn();
-
+            _import = new Import();
             importTBBindingSource.DataSource = ImportBUS.getAll(frmMain._Pstaff);       
             importBindingSource.DataSource = new Import();
 
@@ -64,7 +64,7 @@ namespace DrinkStore.Presentation
         {
             _import = (importBindingSource.Current as Import);
             _import.StaffID = frmMain._Pstaff.StaffID;
-            ImportBUS.add(importBindingSource.Current as Import);
+            ImportBUS.add(_import);
             importTBBindingSource.DataSource = ImportBUS.getAll(frmMain._Pstaff);
 
             //Select latest import
@@ -76,15 +76,19 @@ namespace DrinkStore.Presentation
         //Update import
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            ImportBUS.update(importBindingSource.Current as Import);
-            onLoad();
+            if (!ImportBUS.update(_import))
+                MessageBox.Show("Please select import");
         }
 
         //Delete import
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ImportBUS.delete(importBindingSource.Current as Import);
-            onLoad();
+            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!ImportBUS.delete(_import))
+                    MessageBox.Show("Please select import");
+            }
+
         }
 
       
@@ -151,14 +155,20 @@ namespace DrinkStore.Presentation
 
         private void btnUpdateDetail_Click(object sender, EventArgs e)
         {
-            ImportDetailBUS.update(detailBindingSource.DataSource as ImportDetail);
-            reLoad();
+            ImportDetail _detail = detailBindingSource.Current as ImportDetail;
+            if (!ImportDetailBUS.update(_detail))
+                MessageBox.Show("Please select import");
         }
 
         private void btnDeleteDetail_Click(object sender, EventArgs e)
         {
-            ImportDetailBUS.delete(detailBindingSource.DataSource as ImportDetail);
-            reLoad();
+            ImportDetail _detail = detailBindingSource.Current as ImportDetail;
+            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!ImportDetailBUS.delete(_detail))
+                    MessageBox.Show("Please select import");
+            }
+                
         }
 
 

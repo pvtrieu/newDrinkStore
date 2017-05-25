@@ -14,7 +14,7 @@ namespace DrinkStore.Presentation
 {
     public partial class frmOrder : Form
     {
-        Order _order = new Order();
+        Order _order;
         public frmOrder()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace DrinkStore.Presentation
         private void initLoad()
         {
             offBtn();
+            _order = new Order();
             orderBindingSource.DataSource = new Order();
             orderTBBindingSource.DataSource = OrderBUS.getAll(frmMain._Pstaff);
             productBindingSource.DataSource = ProductBUS.getAll();
@@ -57,7 +58,7 @@ namespace DrinkStore.Presentation
         {
             onBtn();
             orderBindingSource.DataSource = orderTBBindingSource.Current;
-            _order = orderTBBindingSource.Current as Order;
+            _order = orderBindingSource.DataSource as Order;
             detailTBBindingSource.DataSource = OrderDetailBUS.getAll(_order);
             txtOrderID.Text = _order.OrderID.ToString();
         }
@@ -65,7 +66,9 @@ namespace DrinkStore.Presentation
         //Add new order
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            OrderBUS.add(orderBindingSource.Current as Order);
+            _order = orderBindingSource.Current as Order;
+            _order.StaffID = frmMain._Pstaff.StaffID;
+            OrderBUS.add(_order);
             orderTBBindingSource.DataSource = OrderBUS.getAll(frmMain._Pstaff);
 
             //Select latest import
@@ -77,16 +80,25 @@ namespace DrinkStore.Presentation
         //Update order
         private void btnUpdateOrder_Click(object sender, EventArgs e)
         {
-            OrderBUS.update(orderBindingSource.DataSource as Order);
-            initLoad();
+            if (!OrderBUS.update(_order))
+                MessageBox.Show("Please select order");
+               
         }
 
         //Delete order
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
-            OrderBUS.delete(orderBindingSource.DataSource as Order);
-            initLoad();
+            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!OrderBUS.delete(_order))
+                    MessageBox.Show("Please select order");
+            }
         }
+
+
+        //*******************************************************************//
+        //                           ORDER DETAIL                            //
+        //*******************************************************************//
 
         //Reset the order detail form
         private void reLoad()
@@ -118,7 +130,7 @@ namespace DrinkStore.Presentation
         {
             OrderDetail _detail = detailBindingSource.Current as OrderDetail;
             _detail.OrderID = _order.OrderID;
-            if(ProductBUS.available(_detail.ProductID, _detail.Amount))
+            if(OrderDetailBUS.available(_detail.ProductID, _detail.Amount))
             {
                 OrderDetailBUS.add(_detail);
                 reLoad();
@@ -133,14 +145,20 @@ namespace DrinkStore.Presentation
 
         private void btnUpdateDetail_Click(object sender, EventArgs e)
         {
-            OrderDetailBUS.update(detailBindingSource.Current as OrderDetail);
-            reLoad();
+            OrderDetail _detail = detailBindingSource.Current as OrderDetail;
+            if (!OrderDetailBUS.update(_detail))
+                MessageBox.Show("Please select order detail");
+            
         }
 
         private void btnDeleteDetail_Click(object sender, EventArgs e)
         {
-            OrderDetailBUS.delete(detailBindingSource.Current as OrderDetail);
-            reLoad();
+            OrderDetail _detail = detailBindingSource.Current as OrderDetail;
+            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!OrderDetailBUS.delete(_detail))
+                    MessageBox.Show("Please select order");
+            }
         }
 
         private void dgvDetail_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -170,6 +188,12 @@ namespace DrinkStore.Presentation
             frmSearchOrder _frmSearch = new frmSearchOrder();
             _frmSearch.ShowDialog();
             orderBindingSource.DataSource = _frmSearch.getOrder();
+        }
+
+        private void frmOrder_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                initLoad();
         }
     }
 }

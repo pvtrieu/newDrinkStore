@@ -57,28 +57,23 @@ namespace DrinkStore.DAO
         {
             using (DSModel model = new DSModel())
             {
-                return model.Products.Where(x => x.Name.Contains(name)
-                                            || x.CategoryID == cateID
-                                            || x.BrandID == brandID)
-                                            .ToList();
+                var result = model.Products.ToList();
+                if (!String.IsNullOrEmpty(name))
+                    result = result.Where(x => x.Name.Contains(name)).ToList();
+                if (cateID != null)
+                    result = result.Where(x => x.CategoryID == cateID).ToList();
+                if (brandID != null)
+                    result = result.Where(x => x.BrandID == brandID).ToList();
+
+                return result;
             }
         }
 
-        public static int? inStock(int productID)
+        public static decimal? maxUnitCost (Product product)
         {
-            using (DSModel model = new DSModel())
+            using(DSModel model = new DSModel())
             {
-                return model.ImportDetails.Where(x => x.ProductID == productID)
-                                          .Sum(x => x.Amount);
-            }
-        }
-
-        public static int? outStock(int productID)
-        {
-            using (DSModel model = new DSModel())
-            {
-                return model.OrderDetails.Where(x => x.ProductID == productID)
-                                          .Sum(x => x.Amount);
+                return model.ImportDetails.Where(x => x.ProductID == product.ProductID).Max(x => x.UnitCost);
             }
         }
     }

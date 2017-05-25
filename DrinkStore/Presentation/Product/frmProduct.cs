@@ -28,6 +28,7 @@ namespace DrinkStore.Presentation
             productTBBindingSource.DataSource = ProductBUS.getAll();
             categoryBindingSource.DataSource = CategoryBUS.getAll();
             brandBindingSource.DataSource = BrandBUS.getAll();
+            unitBindingSource.DataSource = UnitBUS.getAll();
             productBindingSource.DataSource = new Product();
             dgvProduct.ClearSelection();
         }
@@ -57,7 +58,10 @@ namespace DrinkStore.Presentation
 
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            productBindingSource.DataSource = productTBBindingSource.Current;           
+            
+            productBindingSource.DataSource = productTBBindingSource.Current;
+            lblCurrentMax.Text = "Import price: ";
+            lblCurrentMax.Text += ProductBUS.maxUnitCost(productBindingSource.DataSource as Product).ToString();           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -73,8 +77,10 @@ namespace DrinkStore.Presentation
         {
             if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ProductBUS.delete(productBindingSource.Current as Product);
-                onLoad();
+                if(ProductBUS.delete(productBindingSource.Current as Product))
+                    onLoad();
+                else
+                    MessageBox.Show("Cannot Delete!");
             };
             
            

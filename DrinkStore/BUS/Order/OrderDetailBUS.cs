@@ -15,6 +15,18 @@ namespace DrinkStore.BUS
             return OrderDetailDAO.getAll(order);
         }
 
+        public static bool available(int productID, int? amount)
+        {
+            int? inStock = OrderDetailDAO.inStock(productID);
+            int? outStock = OrderDetailDAO.outStock(productID);
+            if (inStock == null) inStock = 0;
+            if (outStock == null) outStock = 0;
+            if (inStock - outStock >= amount)
+                return true;
+            else
+                return false;
+        }
+
         public static bool add(OrderDetail detail)
         {
             try
@@ -26,16 +38,35 @@ namespace DrinkStore.BUS
             {
                 return false;
             }
+
         }
 
-        public static void update(OrderDetail detail)
+        public static bool update(OrderDetail detail)
         {
-            OrderDetailDAO.update(detail);
+            try
+            {
+                OrderDetailDAO.update(detail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
-        public static void delete(OrderDetail detail)
+        public static bool delete(OrderDetail detail)
         {
-            OrderDetailDAO.delete(detail);
+            try
+            {
+                OrderDetailDAO.delete(detail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

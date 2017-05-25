@@ -168,7 +168,7 @@
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(80, 26);
             this.btnAddOrder.TabIndex = 89;
-            this.btnAddOrder.Text = "New";
+            this.btnAddOrder.Text = "Add";
             this.btnAddOrder.UseVisualStyleBackColor = false;
             this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
@@ -536,6 +536,7 @@
             this.Name = "frmOrder";
             this.Text = "frmOrder";
             this.Load += new System.EventHandler(this.frmOrder_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.frmOrder_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.pnlOrderData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();

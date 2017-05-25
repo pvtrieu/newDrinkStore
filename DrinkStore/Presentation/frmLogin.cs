@@ -38,7 +38,7 @@ namespace DrinkStore.Presentation
             //Authorize account
             if (StaffBUS.valid(txtUsername.Text, txtPassword.Text))
             {                
-                Staff staff = StaffBUS.getByUsername(txtUsername.Text);
+                Staff staff = StaffBUS.getByUsername(txtUsername.Text);                
                 frmMain _frmMain = new frmMain(staff);
                 this.Hide();
                 _frmMain.ShowDialog();

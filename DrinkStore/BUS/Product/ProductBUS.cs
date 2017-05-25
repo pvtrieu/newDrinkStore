@@ -65,16 +65,17 @@ namespace DrinkStore.BUS
             return ProductDAO.search(name, cateID, brandID);
         }
 
-        public static bool available(int productID, int? amount)
+        public static decimal? maxUnitCost(Product product)
         {
-            int? inStock = ProductDAO.inStock(productID);
-            int? outStock = ProductDAO.outStock(productID);
-            if (inStock == null) inStock = 0;
-            if (outStock == null) outStock = 0;
-            if (inStock - outStock >= amount)
-                return true;
-            else
-                return false;
+            try
+            {
+                return ProductDAO.maxUnitCost(product);
+            }
+            catch
+            {
+                return 0;
+            }
+                
         }
     }
 }

@@ -17,7 +17,7 @@ namespace DrinkStore.DAO
             }
         }
 
-        public static void insert(Supplier supplier)
+        public static void add(Supplier supplier)
         {
             using (DSModel model = new DSModel())
             {

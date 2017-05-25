@@ -25,7 +25,7 @@ namespace DrinkStore.DAO
             }
         }
 
-        public static void insert(Category category)
+        public static void add(Category category)
         {
             using (DSModel model = new DSModel())
             {
