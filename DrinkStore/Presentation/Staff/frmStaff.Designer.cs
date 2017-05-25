@@ -66,7 +66,7 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.lblSalary = new System.Windows.Forms.Label();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.lblPosition = new System.Windows.Forms.Label();
@@ -458,13 +458,13 @@
             this.lblAddress.TabIndex = 44;
             this.lblAddress.Text = "Address:";
             // 
-            // textBox2
+            // txtSalary
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Name", true));
-            this.textBox2.Location = new System.Drawing.Point(302, 264);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Salary", true));
+            this.txtSalary.Location = new System.Drawing.Point(302, 264);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(279, 20);
+            this.txtSalary.TabIndex = 9;
             // 
             // lblSalary
             // 
@@ -552,7 +552,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboPosition);
             this.Controls.Add(this.lblPosition);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAddress);
@@ -624,7 +624,7 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.Label lblPosition;
