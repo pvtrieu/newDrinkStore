@@ -154,10 +154,12 @@ namespace DrinkStore.Presentation
         private void btnDeleteDetail_Click(object sender, EventArgs e)
         {
             OrderDetail _detail = detailBindingSource.Current as OrderDetail;
-            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!OrderDetailBUS.delete(_detail))
                     MessageBox.Show("Please select order");
+                else
+                    reLoad();
             }
         }
 

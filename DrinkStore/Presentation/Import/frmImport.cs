@@ -158,15 +158,19 @@ namespace DrinkStore.Presentation
             ImportDetail _detail = detailBindingSource.Current as ImportDetail;
             if (!ImportDetailBUS.update(_detail))
                 MessageBox.Show("Please select import");
+            else
+                reLoad();
         }
 
         private void btnDeleteDetail_Click(object sender, EventArgs e)
         {
             ImportDetail _detail = detailBindingSource.Current as ImportDetail;
-            if (MessageBox.Show("Message", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!ImportDetailBUS.delete(_detail))
                     MessageBox.Show("Please select import");
+                else
+                    reLoad();
             }
                 
         }
